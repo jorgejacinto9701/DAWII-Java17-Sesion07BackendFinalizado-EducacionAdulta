@@ -25,7 +25,7 @@ import com.empresa.util.Constantes;
 @RestController
 @RequestMapping("/url/crudDocente")
 @CrossOrigin(origins = "http://localhost:4200")
-public class CrudDocenteController {
+public class DocenteCrudController {
 
 	@Autowired
 	private DocenteService service;

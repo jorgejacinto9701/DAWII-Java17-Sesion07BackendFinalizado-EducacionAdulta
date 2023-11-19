@@ -26,6 +26,16 @@ public interface DocenteRepository extends JpaRepository<Docente, Integer> {
 	
 	@Query("select x from Docente x where x.dni = ?1 and x.idDocente != ?2")
 	public abstract List<Docente> listaPorDNIIgualActualiza(String dni, int idDocente);
+	
+	//CONSULTA
+	@Query("select x from Docente x where "
+							+ "(x.nombre like ?1) and "
+							+ "(?2 = '' or x.dni = ?2) and "
+							+ "(x.estado = ?3 ) and "
+							+ "(?4 = -1 or x.ubigeo.idUbigeo = ?4)")
+	public abstract List<Docente> listaConsulta(String nombre, String dni, int estado, int idUbigeo);
+	
+	
 }
 
 
