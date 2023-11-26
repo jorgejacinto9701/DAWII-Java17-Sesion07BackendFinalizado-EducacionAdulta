@@ -108,7 +108,7 @@ public class DocenteConsultaController {
 	private static String TITLE = "Listado de docentes - Autor: Jorge Jacinto";
 	private static int[] HEADER_WITH = { 3000, 10000, 6000, 10000, 20000, 10000 };
 	
-	@GetMapping("/reporteDocenteExcel")
+	@PostMapping("/reporteDocenteExcel")
 	public void  exportaExcel(
 			@RequestParam(name = "nombre" , required = false , defaultValue = "") String nombre, 
 			@RequestParam(name = "dni" , required = false , defaultValue = "") String dni, 
