@@ -10,6 +10,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -50,7 +51,7 @@ public class DocenteConsultaController {
 		return lstSalida;
 	}
 
-	@GetMapping("/reporteDocentePdf")
+	@PostMapping("/reporteDocentePdf")
 	public void  exportaPDF(
 			@RequestParam(name = "nombre" , required = false , defaultValue = "") String nombre, 
 			@RequestParam(name = "dni" , required = false , defaultValue = "") String dni, 
