@@ -69,7 +69,11 @@ public class DocenteConsultaController {
 			log.info(">>> fileReporte >> " + fileReporte);
 			
 			//PASO3 parámetros adicionales
+			String fileLogo  = request.getServletContext().getRealPath("/WEB-INF/img/logo.jpg");
+			log.info(">>> fileLogo >> " + fileLogo);
 			Map<String, Object> params = new HashMap<String, Object>();
+			params.put("RUTA_LOGO", fileLogo);
+
 			
 			//PASO4 Se juntas la data, diseño y parámetros
 			JasperReport jasperReport = (JasperReport) JRLoader.loadObject(new FileInputStream(new File(fileReporte)));
