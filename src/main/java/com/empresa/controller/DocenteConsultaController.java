@@ -81,7 +81,7 @@ public class DocenteConsultaController {
             JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, params, dataSource);
 	       
 			//PASO 5 parametros en el Header del mensajes HTTP
-    		response.setContentType("application/x-pdf");
+    		response.setContentType("application/pdf");
     	    response.addHeader("Content-disposition", "attachment; filename=ReporteAutor.pdf");
 		    
 			//PASO 6 Se envia el pdf
